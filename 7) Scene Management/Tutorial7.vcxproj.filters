@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Tutorial7.cpp" />
+    <ClCompile Include="..\nclgl\SceneNode.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="..\nclgl\CubeRobot.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header.h">
+      <UniqueIdentifier>{8e274fff-fcdd-4a48-963d-2ded8bcd4982}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\SceneNode.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\CubeRobot.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Camera.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

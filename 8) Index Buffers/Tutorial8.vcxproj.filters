@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="tutorial8.cpp" />
+    <ClCompile Include="HeightMap.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="..\nclgl\SceneNode.cpp" />
+    <ClCompile Include="..\nclgl\CubeRobot.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header.h">
+      <UniqueIdentifier>{e5002233-c901-441e-87bb-95a8ac173e1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\Mesh.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightMap.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Camera.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\CubeRobot.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\SceneNode.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

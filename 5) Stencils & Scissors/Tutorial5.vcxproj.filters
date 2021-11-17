@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="tutorial5.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\OGLRenderer.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{f900b9d1-02fb-4ce3-9c8f-d9dde38e965d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\OGLRenderer.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Mouse.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Mesh.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

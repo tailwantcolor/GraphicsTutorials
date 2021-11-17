@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Tutorial11.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+    <ClCompile Include="..\nclgl\HeightMap.cpp" />
+    <ClCompile Include="..\nclgl\OGLRenderer.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="Light.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header.h">
+      <UniqueIdentifier>{ff7d2cf1-30a1-4313-b531-ccf1da28d7c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\Mesh.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\HeightMap.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\OGLRenderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Camera.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

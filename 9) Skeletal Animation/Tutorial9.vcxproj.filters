@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Tutorial9.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+    <ClCompile Include="..\nclgl\MeshAnimation.cpp" />
+    <ClCompile Include="..\nclgl\MeshMaterial.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header.h">
+      <UniqueIdentifier>{3830244d-fda3-44b3-b085-60a09f3540bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\Mesh.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\MeshMaterial.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\MeshAnimation.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Camera.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
