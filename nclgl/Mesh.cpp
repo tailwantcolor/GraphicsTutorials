@@ -49,6 +49,18 @@ void Mesh::Draw()	{
 	glBindVertexArray(0);	
 }
 
+void Mesh::DrawWavemap() {
+	glBindVertexArray(arrayObject);
+	if (bufferObject[INDEX_BUFFER]) {
+		glDrawElements(type, numIndices, GL_UNSIGNED_INT, 0);
+	}
+	else {
+		glDrawArrays(type, 0, numVertices);
+	}
+	glBindVertexArray(0);
+}
+
+
 void Mesh::DrawSubMesh(int i) {
 	if (i < 0 || i >= (int)meshLayers.size()) {
 		return;
@@ -189,6 +201,14 @@ Mesh* Mesh::GenerateQuad() {
 	m->vertices = new Vector3[m->numVertices];
 	m->textureCoords = new Vector2[m->numVertices];
 	m->colours = new Vector4[m->numVertices];
+	m->normals = new Vector3[m->numVertices];
+	m->tangents = new Vector4[m->numVertices];
+
+	for (int i = 0; i < 4; ++i) {
+		m->colours[i] = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+		m->normals[i] = Vector3(0.0f, 0.0f, -1.0f);
+		m->tangents[i] = Vector4(1.0f, 0.0f, 0.0f, 1.0f);
+	}//we're done with the new stuff!
 
 	m->vertices[0] = Vector3(-1.0f,  1.0f, 0.0f);
 	m->vertices[1] = Vector3(-1.0f, -1.0f, 0.0f);
@@ -451,6 +471,14 @@ Mesh* Mesh::LoadFromMeshFile(const string& name) {
 	if (!readWeightIndices.empty()) {
 		mesh->weightIndices = new int[numVertices * 4];
 		memcpy(mesh->weightIndices, readWeightIndices.data(), numVertices * sizeof(int) * 4);
+	}
+
+	if (readNormals.empty()) {
+		mesh->GenerateNormals();
+	}
+
+	if (readTangents.empty()) {
+		mesh->GenerateTangents();
 	}
 
 	mesh->BufferData();

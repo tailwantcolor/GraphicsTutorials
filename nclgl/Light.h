@@ -24,6 +24,7 @@ public:
 	void SetColour(const Vector4& val) { colour = val; }
 
 	void UpdateLight(float dt);
+	void UpdateShadow(float dt);
 protected:
 	Vector3 position;
 	float radius;

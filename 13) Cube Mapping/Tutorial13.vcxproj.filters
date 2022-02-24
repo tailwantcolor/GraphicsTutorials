@@ -2,6 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Tutorial13.cpp" />
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="..\nclgl\HeightMap.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+    <ClCompile Include="..\nclgl\Light.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header.h">
@@ -9,7 +14,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="Renderer.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Camera.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\HeightMap.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Mesh.h">
+      <Filter>Header.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nclgl\Light.h">
       <Filter>Header.h</Filter>
     </ClInclude>
   </ItemGroup>

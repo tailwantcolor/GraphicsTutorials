@@ -50,6 +50,7 @@ public:
 	~Mesh(void);
 
 	void Draw();
+	void DrawWavemap();
 	void DrawSubMesh(int i);
 	/*void BufferData();*/
 	static Mesh* GenerateTriangle();
@@ -101,6 +102,7 @@ protected:
 	GLuint	numIndices;
 	
 	GLuint	type;
+	//GLuint  particleTexture;//xinzeng
 
 	Vector3*		vertices;
 	Vector4*		colours;

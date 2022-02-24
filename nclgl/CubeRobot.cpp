@@ -1,12 +1,17 @@
 #include "CubeRobot.h"
 
-CubeRobot::CubeRobot(Mesh* cube) {
+CubeRobot::CubeRobot(Mesh* cube,Mesh* cylinder,Mesh* sphere) {
 	//SetMesh(cube);
 	//Uncomment if you want a local origin marker!
+	/*SceneNode* trans = new SceneNode(cube, Vector4(1, 0, 0, 1));
+	trans->SetModelScale(Vector3(0, 0, 0));
+	trans->SetTransform(Matrix4::Translation(Vector3(4000, 35, 4000)) * Matrix4::Scale(Vector3(20, 20, 20)));
+	AddChild(trans);*/
 
 	SceneNode* body = new SceneNode(cube, Vector4(1, 0, 0, 1));
 	body->SetModelScale(Vector3(10, 15, 5));
-	body->SetTransform(Matrix4::Translation(Vector3(0, 35, 0))/**Matrix4::Scale(Vector3(20,20,20))*/);
+	body->SetTransform(Matrix4::Translation(Vector3(3000, 450, 3000))*Matrix4::Scale(Vector3(10,10,10)));
+	//body->SetTexture(texture= SOIL_load_OGL_texture(TEXTUREDIR"Barren Reds.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
 	AddChild(body);
 
 	head = new SceneNode(cube, Vector4(0, 1, 0, 1));
@@ -34,6 +39,44 @@ CubeRobot::CubeRobot(Mesh* cube) {
 	rightleg->SetTransform(Matrix4::Translation(Vector3(8, 0, 0)));
 	body->AddChild(rightleg);
 
+
+	SceneNode* body1 = new SceneNode(cube, Vector4(1, 0, 0, 1));
+	body1->SetModelScale(Vector3(10, 15, 5));
+	body1->SetTransform(Matrix4::Translation(Vector3(3500, 550, 5500)) * Matrix4::Scale(Vector3(10, 10, 10)));
+	//body->SetTexture(texture= SOIL_load_OGL_texture(TEXTUREDIR"Barren Reds.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
+	AddChild(body1);
+
+	head1 = new SceneNode(sphere, Vector4(0, 1, 0, 1));
+	head1->SetModelScale(Vector3(5, 5, 5));
+	head1->SetTransform(Matrix4::Translation(Vector3(0, 35, 0)));
+	body1->AddChild(head1);
+
+	leftArm1 = new SceneNode(cylinder, Vector4(0, 1, 0, 1));
+	leftArm1->SetModelScale(Vector3(3, -18, 3));
+	leftArm1->SetTransform(Matrix4::Translation(Vector3(-12, 30, -1)));
+	body1->AddChild(leftArm1);
+
+	rightArm1 = new SceneNode(cylinder, Vector4(0, 0, 1, 1));
+	rightArm1->SetModelScale(Vector3(3, -18, 3));
+	rightArm1->SetTransform(Matrix4::Translation(Vector3(12, 30, -1)));
+	body1->AddChild(rightArm1);
+
+	SceneNode* leftLeg1 = new SceneNode(cube, Vector4(0, 0, 1, 1));
+	leftLeg1->SetModelScale(Vector3(3, -17.5, 3));
+	leftLeg1->SetTransform(Matrix4::Translation(Vector3(-8, 0, 0)));
+	body1->AddChild(leftLeg1);
+
+	SceneNode* rightleg1 = new SceneNode(cube, Vector4(0, 0, 1, 1));
+	rightleg1->SetModelScale(Vector3(3, -17.5, 3));
+	rightleg1->SetTransform(Matrix4::Translation(Vector3(8, 0, 0)));
+	body1->AddChild(rightleg1);
+
+
+	/*SceneNode* hat = new SceneNode(cube, Vector4(0, 0, 1, 1));
+	hat->SetModelScale(Vector3(2, 2, 2));
+	hat->SetTransform(Matrix4::Translation(Vector3(0, 1, 0)));
+	head->AddChild(hat);*/
+
 	body->SetBoundingRadius(15.0f);
 	head->SetBoundingRadius(5.0f);
 
@@ -43,13 +86,60 @@ CubeRobot::CubeRobot(Mesh* cube) {
 	leftLeg->SetBoundingRadius(18.0f);
 	//rightleg->SetBoundingRadius(rightleg->GetWorldTransform().GetScalingVector().Length()/sqrt(2));
 	rightleg->SetBoundingRadius(18.0f);
+
+
 }
+//CubeRobot::CubeRobot(Mesh* cube, Mesh* cylinder, Mesh* sphere) {
+//	SceneNode* body1 = new SceneNode(cube, Vector4(1, 0, 0, 1));
+//	body1->SetModelScale(Vector3(10, 15, 5));
+//	body1->SetTransform(Matrix4::Translation(Vector3(5000, 450, 5000)) * Matrix4::Scale(Vector3(10, 10, 10)));
+//	//body->SetTexture(texture= SOIL_load_OGL_texture(TEXTUREDIR"Barren Reds.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
+//	AddChild(body1);
+//
+//	head1 = new SceneNode(sphere, Vector4(0, 1, 0, 1));
+//	head1->SetModelScale(Vector3(5, 5, 5));
+//	head1->SetTransform(Matrix4::Translation(Vector3(0, 35, 0)));
+//	body1->AddChild(head1);
+//
+//	leftArm1 = new SceneNode(cylinder, Vector4(0, 1, 0, 1));
+//	leftArm1->SetModelScale(Vector3(3, -18, 3));
+//	leftArm1->SetTransform(Matrix4::Translation(Vector3(-12, 30, -1)));
+//	body1->AddChild(leftArm1);
+//
+//	rightArm1 = new SceneNode(cylinder, Vector4(0, 0, 1, 1));
+//	rightArm1->SetModelScale(Vector3(3, -18, 3));
+//	rightArm1->SetTransform(Matrix4::Translation(Vector3(12, 30, -1)));
+//	body1->AddChild(rightArm1);
+//
+//	SceneNode* leftLeg1 = new SceneNode(cube, Vector4(0, 0, 1, 1));
+//	leftLeg1->SetModelScale(Vector3(3, -17.5, 3));
+//	leftLeg1->SetTransform(Matrix4::Translation(Vector3(-8, 0, 0)));
+//	body1->AddChild(leftLeg1);
+//
+//	SceneNode* rightleg1 = new SceneNode(cube, Vector4(0, 0, 1, 1));
+//	rightleg1->SetModelScale(Vector3(3, -17.5, 3));
+//	rightleg1->SetTransform(Matrix4::Translation(Vector3(8, 0, 0)));
+//	body1->AddChild(rightleg1);
+//
+//	body1->SetBoundingRadius(15.0f);
+//	head->SetBoundingRadius(5.0f);
+//
+//	leftArm->SetBoundingRadius(18.0f);
+//	rightArm->SetBoundingRadius(18.0f);
+//
+//	leftLeg->SetBoundingRadius(18.0f);
+//	//rightleg->SetBoundingRadius(rightleg->GetWorldTransform().GetScalingVector().Length()/sqrt(2));
+//	rightleg->SetBoundingRadius(18.0f);
+//}
 
 void CubeRobot::Update(float dt) {
-	transform = transform * Matrix4::Rotation(30.0f * dt, Vector3(0, 1, 0));
+	//transform = transform * Matrix4::Rotation(30.0f * dt, Vector3(0, 1, 0));
 	head->SetTransform(head->GetTransform() * Matrix4::Rotation(-30.0f * dt, Vector3(0, 1, 0)));
 	leftArm->SetTransform(leftArm->GetTransform() * Matrix4::Rotation(-30.0f * dt, Vector3(1, 0, 0)));
 	rightArm->SetTransform(rightArm->GetTransform() * Matrix4::Rotation(30.0f * dt, Vector3(1, 0, 0)));
+	head1->SetTransform(head1->GetTransform() * Matrix4::Rotation(30.0f * dt, Vector3(0, 1, 0)));
+	leftArm1->SetTransform(leftArm1->GetTransform() * Matrix4::Rotation(30.0f * dt, Vector3(1, 0, 0)));
+	rightArm1->SetTransform(rightArm1->GetTransform() * Matrix4::Rotation(-30.0f * dt, Vector3(1, 0, 0)));
 	SceneNode::Update(dt);
 }
 

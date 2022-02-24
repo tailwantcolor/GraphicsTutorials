@@ -1,4 +1,5 @@
-#include "/../NCLGL/window.h"
+//#include "/../nclgl/window.h"
+#include "../nclgl/Window.h"
 #include "Renderer.h"
 
 
@@ -17,7 +18,7 @@ int main() {
 	w.ShowOSPointer(false);
 
 	while(w.UpdateWindow() && !Window::GetKeyboard()->KeyDown(KEYBOARD_ESCAPE)){
-		renderer.UpdateScene(w.GetTimer()->GetTimeDeltaSeconds());
+		renderer.UpdateScene(10*w.GetTimer()->GetTimeDeltaSeconds());
 		renderer.RenderScene();
 		renderer.SwapBuffers();
 		if (Window::GetKeyboard()->KeyDown(KEYBOARD_F5)) {

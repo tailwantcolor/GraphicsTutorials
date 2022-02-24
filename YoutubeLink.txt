@@ -1,0 +1,6 @@
+https://youtu.be/rY3mbYZBnzg
+
+After recording this video, I changed the fragment shader of the water and tower and made their 
+fragcolour.a be 0.5. So they became a little transparent and it will be not same with the scene (when
+press the keyboard 2) in this video.
+I am sorry about the difference.  

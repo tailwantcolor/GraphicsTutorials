@@ -13,11 +13,15 @@ public:
 		this->pitch = pitch;
 		this->yaw = yaw;
 		this->position = position;
+		distance = 0.0f;
 	}
 
 	~Camera(void) {};
 
 	void UpdateCamera(float dt = 1.0f);
+
+	void Updateauto(float dt);
+		
 	Matrix4 BuildViewMatrix();
 
 	Vector3 GetPosition() const { return position; }
@@ -32,5 +36,6 @@ public:
 protected:
 	float yaw;
 	float pitch;
+	float distance;
 	Vector3 position; // set to 0 0 0
 };

@@ -89,7 +89,7 @@ void Renderer::DrawPostProcess() {
 
 	glDisable(GL_DEPTH_TEST);
 	glActiveTexture(GL_TEXTURE0);
-	glUniform1i(glGetUniformLocation(processShader->GetProgram(), "sceneTex"), 0);
+	glUniform1i(glGetUniformLocation(processShader->GetProgram(), "sceneTex"), 0);// why there can be 0 £¬ repeat with isVertical,(sampler2D with int?)
 	for (int i = 0; i < POST_PASSES; ++i) {
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, bufferColourTex[1], 0);
 		glUniform1i(glGetUniformLocation(processShader->GetProgram(), "isVertical"), 0);

@@ -68,16 +68,19 @@ void Renderer::RenderScene() {
 	BindShader(shader_cube);
 	UpdateShaderMatrices();
 	glUniform1i(glGetUniformLocation(shader_cube->GetProgram(), "diffuseTex"), 1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, terrainTex);
 	DrawNode(root);
 
 }
 
 void Renderer::DrawNode(SceneNode* n) {
+	//const Vector4 a= Vector4(0.0f, 0.0f, 0.0f, 0.0f);
 	if (n->GetMesh()) {
 		Matrix4 model = n->GetWorldTransform() * Matrix4::Scale(n->GetModelScale());
 		glUniformMatrix4fv(glGetUniformLocation(shader_cube->GetProgram(), "modelMatrix"), 1, false, model.values);
 		glUniform4fv(glGetUniformLocation(shader_cube->GetProgram(), "nodeColour"), 1, (float*)&n->GetColour());
-		glUniform1i(glGetUniformLocation(shader_cube->GetProgram(), "useTexture"), 0);//
+		glUniform1i(glGetUniformLocation(shader_cube->GetProgram(), "useTexture"), 2);//
 		n->Draw(*this);
 	}
 

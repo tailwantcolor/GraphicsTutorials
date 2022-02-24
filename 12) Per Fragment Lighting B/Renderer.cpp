@@ -30,7 +30,7 @@ Renderer::~Renderer(void) {
 void Renderer::UpdateScene(float dt) {
 	camera->UpdateCamera(dt);
 	viewMatrix = camera->BuildViewMatrix();
-	light->UpdateLight(dt);
+	//light->UpdateLight(dt);
 }
 
 void Renderer::RenderScene() {

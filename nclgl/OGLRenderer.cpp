@@ -16,6 +16,7 @@ _-_-_-_-_-_-_-""  ""
 #include "Shader.h"
 #include <algorithm>
 #include "Light.h"
+#include "spotlight.h"
 
 using std::string;
 
@@ -279,3 +280,19 @@ void OGLRenderer::SetShaderLight(const Light &l) {
 	glUniform1f(glGetUniformLocation(currentShader->GetProgram(), "lightRadius"), l.GetRadius());
 }
 
+void OGLRenderer::SetShaderSpotLight(const Spotlight& l) {
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "lightPos"), 1, (float*)& l.GetPosition());
+	glUniform4fv(glGetUniformLocation(currentShader->GetProgram(), "lightColour"), 1, (float*)& l.GetColour());
+	glUniform1f(glGetUniformLocation(currentShader->GetProgram(), "lightRadius"), l.GetRadius());
+	glUniform1f(glGetUniformLocation(currentShader->GetProgram(), "lightcosAngle"), l.Getcosangle());
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "lightTarget"), 1, (float*)& l.Getlookingat());
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "lightmidDir"), 1, (float*)& l.GetmidDir());
+}
+
+
+void OGLRenderer::SetShaderParLight(const Parlight& l){
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "ParlightPos"), 1, (float*)&l.GetPosition());
+	glUniform4fv(glGetUniformLocation(currentShader->GetProgram(), "ParlightColour"), 1, (float*)&l.GetColour());
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "ParlightTarget"), 1, (float*)&l.GetLookingat());
+	glUniform3fv(glGetUniformLocation(currentShader->GetProgram(), "ParlightDir"), 1, (float*)&l.GetDirection());
+}

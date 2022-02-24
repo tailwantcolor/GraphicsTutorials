@@ -137,15 +137,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\nclgl\Camera.cpp" />
     <ClCompile Include="..\nclgl\Mesh.cpp" />
     <ClCompile Include="..\nclgl\OGLRenderer.cpp" />
+    <ClCompile Include="..\nclgl\ParticleEmitter.cpp" />
     <ClCompile Include="..\nclgl\Shader.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="tutorial1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\nclgl\Camera.h" />
     <ClInclude Include="..\nclgl\Mesh.h" />
     <ClInclude Include="..\nclgl\OGLRenderer.h" />
+    <ClInclude Include="..\nclgl\ParticleEmitter.h" />
     <ClInclude Include="..\nclgl\Shader.h" />
     <ClInclude Include="Renderer.h" />
   </ItemGroup>

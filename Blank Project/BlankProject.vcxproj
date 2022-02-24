@@ -98,6 +98,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\CSC8502 2021 ccx\CSC8502 2021\CSC8502 2021\nclgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -136,11 +137,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="..\nclgl\CubeRobot.cpp" />
+    <ClCompile Include="..\nclgl\HeightMap.cpp" />
+    <ClCompile Include="..\nclgl\Light.cpp" />
+    <ClCompile Include="..\nclgl\Mesh.cpp" />
+    <ClCompile Include="..\nclgl\OGLRenderer.cpp" />
+    <ClCompile Include="..\nclgl\SceneNode.cpp" />
     <ClCompile Include="BlankProject.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="spotlight.cpp" />
+    <ClCompile Include="tree.cpp" />
+    <ClCompile Include="water.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\nclgl\Camera.h" />
+    <ClInclude Include="..\nclgl\CubeRobot.h" />
+    <ClInclude Include="..\nclgl\HeightMap.h" />
+    <ClInclude Include="..\nclgl\Light.h" />
+    <ClInclude Include="..\nclgl\Mesh.h" />
+    <ClInclude Include="..\nclgl\OGLRenderer.h" />
+    <ClInclude Include="..\nclgl\parlight.h" />
+    <ClInclude Include="..\nclgl\SceneNode.h" />
+    <ClInclude Include="..\nclgl\spotlight.h" />
+    <ClInclude Include="Renderer1.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="water.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

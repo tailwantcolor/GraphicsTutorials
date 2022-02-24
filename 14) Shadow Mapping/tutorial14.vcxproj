@@ -132,6 +132,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="..\nclgl\HeightMap.cpp" />
+    <ClCompile Include="..\nclgl\Light.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="tutorial14.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +144,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\Camera.h" />
+    <ClInclude Include="..\nclgl\HeightMap.h" />
+    <ClInclude Include="..\nclgl\Light.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

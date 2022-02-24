@@ -42,6 +42,7 @@ public:
 
 	std::vector<SceneNode*>::const_iterator GetChildIteratorStart() { return children.begin(); }
 	std::vector<SceneNode*>::const_iterator GetChildIteratorEnd() { return children.end(); }
+	std::vector<SceneNode*> children;
 protected:
 	SceneNode* parent;
 	Mesh* mesh;
@@ -49,7 +50,7 @@ protected:
 	Matrix4 transform;
 	Vector3 modelScale;
 	Vector4 colour;
-	std::vector<SceneNode*> children;
+	
 	float distanceFormCamera;
 	float boundingRadius;
 	GLuint texture;

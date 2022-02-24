@@ -10,6 +10,7 @@ public:
 	~Renderer(void);
 	void RenderScene() override;
 	void UpdateScene(float dt) override;
+
 protected:
 	void DrawHeightmap();
 	void DrawWater();
@@ -24,4 +25,13 @@ protected:
 
 	Light* light;
 	Camera* camera;
+
+	GLuint cubeMap;
+	GLuint waterTex;
+	GLuint waterBump;
+	GLuint earthTex;
+	GLuint earthBump;
+
+	float waterRotate;
+	float waterCycle;
 };

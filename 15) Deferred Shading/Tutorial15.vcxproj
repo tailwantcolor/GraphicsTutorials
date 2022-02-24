@@ -132,7 +132,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\nclgl\Camera.cpp" />
+    <ClCompile Include="..\nclgl\HeightMap.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Tutorial15.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nclgl\Camera.h" />
+    <ClInclude Include="..\nclgl\HeightMap.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

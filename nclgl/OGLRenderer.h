@@ -36,6 +36,8 @@ _-_-_-_-_-_-_-""  ""
 #include "Shader.h"
 #include "Mesh.h"
 #include "Light.h"
+#include "spotlight.h"
+#include "parlight.h"
 
 using std::vector;
 
@@ -58,6 +60,8 @@ public:
 
 	bool			HasInitialised() const;	
 	void            SetShaderLight(const Light& l);
+	void            SetShaderSpotLight(const Spotlight& l);
+	void            SetShaderParLight(const Parlight& l);
 	
 protected:
 	virtual void	Resize(int x, int y);	
